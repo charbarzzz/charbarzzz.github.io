@@ -1,1 +1,86 @@
-Hello World
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Navajo Code Talker App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <script>
+    function fun() {
+      var lookup = {
+        " ": " ",
+        "\n": "\n",
+        "A": "wol-la-chee",
+        "B": "shush",
+        "C": "moasi",
+        "D": "lha-cha-eh",
+        "E": "ah-jah",
+        "F": "ma-e",
+        "G": "ah-tad",
+        "H": "tse-gah",
+        "I": "tkin",
+        "J": "ah-ya-tsinne",
+        "K": "klizzie-yazzie",
+        "L": "ah-jad",
+        "M": "na-as-tso-si",
+        "N": "a-chin",
+        "O": "ne-ahs-jah",
+        "P": "cla-gi-aih",
+        "Q": "ca-yeilth",
+        "R": "gah",
+        "S": "dibeh",
+        "T": "d-ah",
+        "U": "shi-da",
+        "V": "a-keh-di-glini",
+        "W": "gloe-ih",
+        "X": "al-na-as-dzoh",
+        "Y": "tsah-as-zih",
+        "Z": "besh-do-tliz"
+      };
+
+      const inputArea = document.querySelector("#input");
+      const outputArea = document.querySelector("#output");
+      var s = inputArea.value;
+      var res = '';
+
+      for(const char of s) {
+        res = res + " " + (lookup[char.toUpperCase()] || char);
+      }
+
+      outputArea.value = res;
+    } 
+  </script>
+
+  <h3>About</h3>
+  <p>
+   This a picture of a WWII TBY-8 short range radio. This was used by Navajo Codetalkers to send and receive messages during World War 2.
+  </p>
+
+  <p>
+   To use this app put your text in the first text box and press translate to see it in navajo code.
+  </p>
+
+  <!-- 2304x1728 -->
+  <img src="Codetalker Radio.jpg" alt="Codetalker Radio" style="width:576px;height:432px;">
+  <br>
+  <textarea id="input" name="input" rows="4" cols="50" placeholder="enter text to translate"></textarea>
+  <br>
+  <button onclick="fun()">translate</button>
+  <br>
+  <textarea id="output" name="output" rows="4" cols="50"></textarea>
+  <br>
+
+  <h3>Credits</h3>
+  <p>by Charlie Loffredo</p>
+
+  <p>The table of translations is from "Chester Nez and the Unbreakable Code" by Joseph Bruchac and Liz Amini-Holmes.
+  </p>
+  <p>
+  The Picture of Code Talker Radio is from <a href="https://www.flickr.com/photos/k9qfr/2429713570">flickr</a>.
+  </p>
+
+</body>
+
+</html>
